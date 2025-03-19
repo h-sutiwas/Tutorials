@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         // This is my first Java Program
@@ -61,6 +63,18 @@ public class Main {
         System.out.println("My favorite food is " + food);
         System.out.println("I'm " + age + "years old.");
         System.out.println("My gpa is " + gpa);
+
+        // 3. User Input from import scanner package
+        // at the top of our Java file (basically before Main class)
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter your name: ");
+        String nameIn = scanner.nextLine();
+
+        System.out.println("Hello " + name);
+
+        scanner.close();
 
         // If - statement
         if (isStudent){
