@@ -61,7 +61,7 @@ public class Main {
         System.out.println("My name is " + name);
         System.out.println("My email is " + email);
         System.out.println("My favorite food is " + food);
-        System.out.println("I'm " + age + "years old.");
+        System.out.println("I'm " + age + " years old.");
         System.out.println("My gpa is " + gpa);
 
         // 3. User Input from import scanner package
@@ -72,7 +72,7 @@ public class Main {
         System.out.println("Enter your name: ");
         String nameIn = scanner.nextLine();
 
-        System.out.println("Hello " + name);
+        System.out.println("Hello " + nameIn);
 
         scanner.close();
 
