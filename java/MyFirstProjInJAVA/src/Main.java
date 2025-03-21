@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // This is my first Java Program
-
         System.out.println("Hello and Welcome!!!\n");
         System.out.println("It's really good\n");
         System.out.println("Buy me pizza!");
@@ -23,11 +22,11 @@ public class Main {
         // char         object
         // boolean
 
+
         // 2 Steps to create a variable
         // ----------------------------
         // 1. declaration
         // 2. assignment
-
         int age = 30;
         int year = 2025;
         int quantity = 1;
@@ -64,17 +63,41 @@ public class Main {
         System.out.println("I'm " + age + " years old.");
         System.out.println("My gpa is " + gpa);
 
+
         // 3. User Input from import scanner package
         // at the top of our Java file (basically before Main class)
-
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Are you a student? (true/false): ");
+        boolean isStudentIn = scanner.nextBoolean();
+        scanner.nextLine(); // Add this line to consume the newline character
 
-        System.out.println("Enter your name: ");
-        String nameIn = scanner.nextLine();
+        if (isStudentIn) {
+            System.out.println("--- STATUS CHECK STUDENT ---");
+            System.out.println("------ PROCEED ONWARD ------");
 
-        System.out.println("Hello " + nameIn);
+            while (true) {
 
-        scanner.close();
+                System.out.println("Enter your name: ");
+                String nameIn = scanner.nextLine();
+
+                System.out.println("Enter your age: ");
+                int ageIn = scanner.nextInt();
+                scanner.nextLine(); // Add this line to consume the newline character
+
+                System.out.println("Enter your gpa: ");
+                double gpaIn = scanner.nextDouble();
+
+                System.out.println("Hello " + nameIn);
+                System.out.println("You are " + ageIn + " years old");
+                System.out.println("Your GPA is: " + gpaIn);
+
+                scanner.close();
+                break;
+            }
+        } else {
+            System.out.println("STATUS CHECK NOT STUDENT !!!!");
+            scanner.close();
+        }
 
         // If - statement
         if (isStudent){
