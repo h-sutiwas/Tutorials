@@ -91,13 +91,32 @@ public class Main {
                 System.out.println("You are " + ageIn + " years old");
                 System.out.println("Your GPA is: " + gpaIn);
 
-                scanner.close();
                 break;
             }
         } else {
             System.out.println("STATUS CHECK NOT STUDENT !!!!");
-            scanner.close();
         }
+
+        // Simple Area of RectangleInput
+        double width = 0;
+        double height = 0;
+        double area = 0;
+
+        Scanner scanner2 = new Scanner(System.in);
+        System.out.println("Enter the width: ");
+        width = scanner2.nextDouble();
+
+        System.out.println("Enter the height: ");
+        height = scanner2.nextDouble();
+
+        area = height * width;
+
+        // Windows: Numlock +  Alt + 0178
+        // Mac: Start + spacebar
+        System.out.println("The are is: " + area + "cm²");
+
+        scanner2.close();
+
 
         // If - statement
         if (isStudent){
@@ -106,7 +125,6 @@ public class Main {
         else {
             System.out.println("This person is not a student");
         }
-
 
         // Loop
         // for (int i = 1; i <= 10; i++) {
