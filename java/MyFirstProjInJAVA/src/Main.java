@@ -119,11 +119,49 @@ public class Main {
 
 
         // If - statement
-        if (isStudent){
-            System.out.println("This person is a student\n");
+        Scanner scanner3 = new Scanner(System.in);
+
+        int ageIf;
+        String nameIf;
+
+        System.out.println("Enter your name: ");
+        nameIf = scanner3.nextLine();
+
+        System.out.println("Enter your age: ");
+        ageIf = scanner3.nextInt();
+
+        // GROUP 1
+        if (nameIf.isEmpty()) {
+            System.out.println("You didn't enter your name!😡");
         }
         else {
-            System.out.println("This person is not a student");
+            System.out.println("Hello " + nameIf + "!👋");
+        }
+
+
+        // GROUP 2
+        if (ageIf >= 65){
+            System.out.println("You are a senior!👴");
+        }
+        else if(ageIf >= 18){
+            System.out.println("You are an adult!👨");
+        }
+        else if(ageIf == 0){
+            System.out.println("You are a baby!👶");
+        }
+        else if(ageIf < 0){
+            System.out.println("You aren't even born yet!👼");
+        }
+        else {
+            System.out.println("You are a minor!🧒");
+        }
+
+        // GROUP 3
+        if (isStudent){
+            System.out.println("This person is a student! 🧑‍🎓");
+        }
+        else {
+            System.out.println("This person is NOT a student 🏢");
         }
 
         // Loop
