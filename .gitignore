@@ -188,3 +188,7 @@ cython_debug/
 **/plugins/
 **/credentials/
 .conda/
+
+# others
+*.iml
+*.xml
