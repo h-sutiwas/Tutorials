@@ -34,3 +34,6 @@ for i in range(TOTAL_PROBLEMS):
 
 end_time = time.time()
 total_time = round(end_time - start_time, 2)
+
+print("---------------------")
+print(f"Nice work! You finished in {total_time} seconds!")
