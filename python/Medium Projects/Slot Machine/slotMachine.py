@@ -1,3 +1,7 @@
+MAX_LINES = 3
+MIN_BET = 1
+MAX_BET = 100
+
 def deposit():
     while True:
         amount = input("How much money would you like to deposit? ($)")
