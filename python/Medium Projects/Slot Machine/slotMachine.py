@@ -96,10 +96,10 @@ def get_bet():
         amount = input("How much would you like to bet? $")
         if amount.isdigit():
             amount = int(amount)
-            if amount > 0:
+            if MIN_BET <= amount <= MAX_BET:
                 break
             else:
-                print("Amount must be more than 0....")
+                print(f"Amount must be between {MIN_BET} - {MAX_BET}.")
         else:
             print("Please enter a number!!!")
         
@@ -113,7 +113,7 @@ def main():
         total_bet = bet * lines
         
         if total_bet > balance:
-            print(f"You do not have enough to bet that amount, you must deposit more money")
+            print(f"You do not have enough to bet that amount, your current balance is: ${balance}")
         else:
             break
         
