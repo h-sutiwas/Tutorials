@@ -1,3 +1,5 @@
+import time
+
 import turtle
 
 WIDTH, HEIGHT = 500, 500
@@ -33,5 +35,6 @@ def main():
     
     racer = turtle.Turtle()
     racer.forward(100)
+    time.sleep(5)
 
 main()
