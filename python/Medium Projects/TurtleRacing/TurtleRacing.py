@@ -1,3 +1,8 @@
+import turtle
+
+WIDTH, HEIGHT = 500, 500
+
+
 def get_number_of_racers():
     racers = 0
     while True:
@@ -15,8 +20,18 @@ def get_number_of_racers():
     
     return racers
 
+def init_turtle():
+    screen = turtle.Screen()
+    screen.setup(WIDTH, HEIGHT)
+    screen.title("Turtle Racing!")
+
 def main():
     racers = get_number_of_racers()
     print(racers)
+
+    init_turtle()
+    
+    racer = turtle.Turtle()
+    racer.forward(100)
 
 main()
