@@ -32,6 +32,10 @@ def main():
     print(racers)
 
     init_turtle()
+    random.shuffle(COLORS)
+    
+    colors = COLORS[:racers]
+    print(colors)
     
     racer = turtle.Turtle()
     racer.forward(100)
