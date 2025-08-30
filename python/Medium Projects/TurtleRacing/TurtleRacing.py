@@ -1,9 +1,9 @@
 import time
-
+import random
 import turtle
 
 WIDTH, HEIGHT = 500, 500
-
+COLORS = ['red', 'green', 'blue', 'orange', 'yellow', 'black', 'purple', 'pink', 'brown', 'cyan']
 
 def get_number_of_racers():
     racers = 0
