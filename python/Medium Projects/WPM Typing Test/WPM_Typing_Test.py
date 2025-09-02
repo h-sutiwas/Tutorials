@@ -1,6 +1,8 @@
+import random
+import time
+
 import curses
 from curses import wrapper
-import time
 
 def startscreen(stdscr):
     stdscr.clear()
@@ -19,6 +21,11 @@ def display_text(stdscr, target, current, wpm=0):
         else:
             color = curses.color_pair(2)
         stdscr.addstr(0, i, char, color)
+        
+def load_text():
+    with open("test.txt", 'r') as f:
+        lines = f.readlines()
+        return random.choice(lines).strip()
 
 def wpm_test(stdscr):
     target_text = "Hello world this is some test text for this app!"
@@ -59,10 +66,15 @@ def main(stdscr):
     curses.init_pair(3, curses.COLOR_WHITE, curses.COLOR_BLACK)
     
     startscreen(stdscr)
-    wpm_test(stdscr)
-    
-    stdscr.addstr(2, 0, "You have completed the Typing test! \nPress any key to exit...")
-    stdscr.getkey()
-
+    while True:
+        wpm_test(stdscr)
+        
+        stdscr.addstr(2, 0, "You have completed the Typing test! \nPress any key to continue...")
+        key = stdscr.getkey()
+        
+        if ord(key) == 27:
+            break
     
 wrapper(main)
+
+
