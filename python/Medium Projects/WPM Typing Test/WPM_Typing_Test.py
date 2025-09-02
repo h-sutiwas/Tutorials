@@ -8,7 +8,16 @@ def startscreen(stdscr):
     stdscr.refresh()
     stdscr.getkey()
 
-
+def wpm_test(stdscr):
+    target_text = "Hello world this is some test text for this app!"
+    current_text = []
+    
+    stdscr.clear()
+    stdscr.addstr(target_text)
+    stdscr.refresh()
+    
+    while True:
+        key = stdscr.getkey()
 
 def main(stdscr):
     curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
@@ -16,6 +25,7 @@ def main(stdscr):
     curses.init_pair(3, curses.COLOR_WHITE, curses.COLOR_BLACK)
     
     startscreen(stdscr)
+    wpm_test(stdscr)
 
     
 wrapper(main)
