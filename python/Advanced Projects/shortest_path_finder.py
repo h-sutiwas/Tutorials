@@ -1,6 +1,6 @@
 import curses
 from curses import wrapper
-import deque
+import queue
 import time
 
 maze = [
