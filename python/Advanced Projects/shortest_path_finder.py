@@ -21,4 +21,4 @@ def main(stdscr):
     stdscr.refresh()
     stdscr.getch()
 
-wrapper(main)
+curses.wrapper(main)
