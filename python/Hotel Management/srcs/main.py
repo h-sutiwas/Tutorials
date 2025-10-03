@@ -26,3 +26,13 @@ class Hotel:
 
     def __repr__( self ) -> str:
         return f"PRHOTELS DATA:\nHotelName:{self.name}\tRoom Available:{self.roomAvl}\tLocation:{self.location}\tRating:{self.rating}\tPrice Per Room:{self.pricePr}"
+    
+class User:
+    def __init__( self ) -> None:
+        self.uname = ''
+        self.uid = ''
+        self.cost = ''
+
+    def __repr__( self ) -> str:
+        return f"UserName:{self.uname}\tUserId:{self.uid}\tBooking Cost:{self.cost}"
+    
