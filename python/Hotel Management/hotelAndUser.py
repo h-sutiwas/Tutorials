@@ -62,7 +62,7 @@ def SortHotelByRating( hotels ):
     print()
 
 
-def SortHotelByCity( location, hotels ):
+def PrintHotelByCity( location, hotels ):
     print(f"HOTELS FOR {location} LOCATION ARE:")
     hotelsByLoc = [h for h in hotels if h.location == location]
 
