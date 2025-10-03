@@ -23,12 +23,12 @@ def HotelManagement(userName, userId, hotelName,
     SortHotelByName(hotels)
     SortHotelByRating(hotels)
     PrintHotelByCity("Bangalore",
-                     hotels)
+                    hotels)
     SortHotelByRoomAvailable(hotels)
     PrintUserData(userName,
-                  userId,
-                  bookingCost,
-                  hotels)
+                userId,
+                bookingCost,
+                hotels)
 
 if __name__ == '__main__':
     userName = ["U1", "U2", "U3"]
