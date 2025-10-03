@@ -36,3 +36,59 @@ class User:
     def __repr__( self ) -> str:
         return f"UserName:{self.uname}\tUserId:{self.uid}\tBooking Cost:{self.cost}"
     
+
+def PrintHotelData( hotels ):
+    for h in hotels:
+        print(h)
+
+
+def SortHotelByName( hotels ):
+    print("SORT BY NAME:")
+
+    Hotel.sortByName()
+    hotels.sort()
+
+    PrintHotelData( hotels )
+    print()
+
+
+def SortHotelByRating( hotels ):
+    print("SORT BY RATING:")
+
+    Hotel.sortByRate()
+    hotels.sort()
+
+    PrintHotelData( hotels )
+    print()
+
+
+def SortHotelByCity( location, hotels ):
+    print(f"HOTELS FOR {location} LOCATION ARE:")
+    hotelsByLoc = [h for h in hotels if h.location == location]
+
+    PrintHotelData( hotelsByLoc )
+    print()
+
+
+def SortHotelByRoomAvailable( hotels ):
+    print("SORT BY ROOM AVAILABLE:")
+
+    Hotel.sortByRoomAvailable()
+    hotels.sort()
+
+    PrintHotelData( hotels )
+    print()
+
+
+def PrintUserData( userName, userId, bookingCost, hotels ):
+    users = []
+
+    for i in range(3):
+        u=User()
+        u.uname = userName
+        u.uid = userId
+        u.cost = bookingCost
+        users.append(u)
+    
+    for i in range(len(users)):
+        print(users[i], f"\tHotel Name:{hotels}")
