@@ -45,17 +45,26 @@ class Trie:
     
     def list_words(self):
         pass
+    
+    #   Example: Delete The Word "mini" from the Trie.
+    
+    ##  Example Trie : mini, minimal, minimum, minimalism
+
+    ##  Recursive through the _delete method till we hit the end where index = 4
+    ##  we will find that the 'i' at the end of 'mini' still flag with isEndOfWord
+    ##  so we change that. Even if it can loop through the search method, it will 
+    ##  still not find the word since isEndOfWord is now False.
 
     def _delete(self, curr, word, index):
-        if index == len(word):
+        if index == len(word): 
             if not curr.isEndOfWord:
                 return False
             
-            curr.isEndOfWord = False
+            curr.isEndOfWord = False # remove the flag 'isEndOfWord'
 
             return len(curr.children) == 0
         
-        char = word[index]
+        char = word[index] 
         node = curr.children.get(char)
 
         if node is None:
@@ -67,4 +76,4 @@ class Trie:
             del curr.children[char]
             return len(curr.children) == 0 and not curr.isEndOfWord
         
-        return 
+        return False
