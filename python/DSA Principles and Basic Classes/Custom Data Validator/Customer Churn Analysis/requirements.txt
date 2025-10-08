@@ -1,8 +1,0 @@
-kaggle
-numpy
-pandas
-matplotlib
-jupyter
-seaborn
-tqdm
-openpyxl
