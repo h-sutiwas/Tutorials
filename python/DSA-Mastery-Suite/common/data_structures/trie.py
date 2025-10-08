@@ -6,7 +6,8 @@ class TrieNode:
 class Trie:
     def __init__(self):
         self.root = TrieNode()
-
+    
+    # O(m) - where m is the length of the word
     def insert(self, word: str ):
         curr = self.root
 
@@ -17,6 +18,7 @@ class Trie:
 
         curr.isEndOfWord = True
 
+    # O(m) - where m is the length of the word
     def search(self, word: str):
         curr = self.root
 
@@ -27,6 +29,7 @@ class Trie:
 
         return curr.isEndOfWord
 
+    # O(m) - where m is the length of the prefix
     def has_prefix(self, prefix: str):
         curr = self.root
 
@@ -37,15 +40,48 @@ class Trie:
             
         return True
     
+    # O(m) - where m is the length of the word
     def delete(self, word: str):
         return self._delete(self.root, word, 0)
 
+    # O(m + k) - where m is the length of the prefix and k is the total number of characters in all suffix
     def starts_with(self, prefix: str):
-        pass
+        words = []
+        curr = self.root
+
+        for char in prefix:
+            if char not in curr.children:
+                return words
+            
+            curr = curr.children[char]
+        
+        def _dfs(curr, path):
+            if curr.isEndOfWord:
+                words.append(''.join(path))
+
+            for char, child_node in curr.children.items():
+                _dfs(child_node, path + [char])
+        
+        _dfs(curr, list(prefix))
+
+        return words
     
+    # O(n) - where n is the number of nodes in the Trie
     def list_words(self):
-        pass
+        words = list()
+
+        def _dfs(curr, path):
+            if curr.isEndOfWord:
+                words.append(''.join(path))
+
+            for char, child_node in curr.children.items():
+                _dfs(child_node, path + [char])
+        
+        _dfs(self.root, [])
+
+        return words
     
+    # 
     #   Example: Delete The Word "mini" from the Trie.
     
     ##  Example Trie : mini, minimal, minimum, minimalism
